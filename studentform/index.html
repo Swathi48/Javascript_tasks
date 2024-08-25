@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <link rel="stylesheet" href="style.css">
+   
+    
+</head>
+
+
+<body>
+    <h1 class="tittle">Student Form</h1>
+    <section class="section1">
+     
+        <form>
+            <table id="studentform" border="1">
+                <tr>
+                    <td><label for="name">Name</label></td>
+                    <td><input type="text" placeholder="Enter your name" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="age">Age</label></td>
+                    <td><input type="number" placeholder="Enter your age"  id="age"></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender</label></td>
+                    <td><input type="radio" id="male" name="gender" value="Male"> Male
+                    <input type="radio" id="female" name="gender" value="Female"> Female
+                </td>
+                </tr>
+                <tr>
+                    <td><label for="course">Course</label></td>
+                    <td>
+                        <select id="course" name="course">
+                            <option value="Javascript">Javascript</option>
+                            <option value="CSS">CSS</option>
+                            <option value="HTML">HTML</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">E-mail</label></td>
+                    <td><input type="email" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    
+                    <td colspan="5" ><button id="btn" type="button"  onclick="Studentdata()">Save</button></td>
+                    
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <section class="section2">
+        <form>
+            <table border="1" id="table2">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Course</td>
+                        <td>Gender</td>
+                        <td>E-mail</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </form>
+    </section>
+<script>
+    function Studentdata(){
+    var name=document.getElementById("name").value
+    var age = document.getElementById("age").value
+    var gender=document.querySelector('input[name="gender"]:checked').value
+    var Course=document.getElementById("course").value
+    var email= document.getElementById("email").value
+
+   var table2 = document.getElementById("table2").getElementsByTagName('tbody')[0];
+     var newrow = table2.insertRow()
+
+     var cell1=newrow.insertCell(0)
+     var cell2=newrow.insertCell(1)
+     var cell3=newrow.insertCell(2)
+     var cell4=newrow.insertCell(3)
+     var cell5=newrow.insertCell(4)
+     var cell6=newrow.insertCell(5)
+
+    cell1.innerHTML=name;
+    cell2.innerHTML=age;
+    cell3.innerHTML=Course;
+    cell4.innerHTML=gender;
+    cell5.innerHTML=email
+    cell6.innerHTML='<button  class="action-btn " onclick="Delete(this)">Delete</button>'
+
+
+
+    }
+    function Delete(btn){
+     var row = btn.parentNode.parentNode;
+     row.parentNode.removeChild(row);
+}
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+.section1{
+    display: flex;
+    justify-content: center;
+}
+.tittle{
+    text-align: center;
+}
+#btn{
+    width: 100%;
+}
+#studentform{
+    padding: 5px;
+}
+#studentform td{
+padding: 4px;
+}
+.section2{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+#table2 td {
+    padding: 10px;
+}
+#btn{
+    background-color: lightgreen;
+    padding: 2px;
+    
+    
+}
+.action-btn{
+    background-color: red;
+    color: white;
+}
